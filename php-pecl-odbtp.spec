@@ -11,7 +11,7 @@ Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/%{_modname}-%{version}.tgz
 # Source0-md5:	28c3076fefccdca9e07548b8291d41b4
 Patch0:		%{name}-shared.patch
-Patch0:		%{name}-shared64.patch
+Patch1:		%{name}-shared64.patch
 URL:		http://pecl.php.net/package/odbtp/
 BuildRequires:	libtool
 BuildRequires:	odbtp-devel
