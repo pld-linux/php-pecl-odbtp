@@ -11,6 +11,7 @@ Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/%{_modname}-%{version}.tgz
 # Source0-md5:	28c3076fefccdca9e07548b8291d41b4
 Patch0:		%{name}-shared.patch
+Patch0:		%{name}-shared64.patch
 URL:		http://pecl.php.net/package/odbtp/
 BuildRequires:	libtool
 BuildRequires:	odbtp-devel
@@ -42,7 +43,11 @@ To rozszerzenie ma w PECL status: %{_status}.
 
 %prep
 %setup -q -c
+%ifnarch amd64
 %patch0 -p1
+%else
+%patch1 -p1
+%endif
 
 %build
 cd %{_modname}-%{version}
