@@ -13,6 +13,7 @@ Source0:	http://pecl.php.net/get/%{_modname}-%{version}.tgz
 Patch0:		%{name}-shared.patch
 URL:		http://pecl.php.net/package/odbtp/
 BuildRequires:	libtool
+BuildRequires:	odbtp-devel
 BuildRequires:	php-devel
 Requires:	php-common
 Obsoletes:	php-pear-%{_modname}
