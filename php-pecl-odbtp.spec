@@ -32,9 +32,9 @@ In PECL status of this extension is: %{_status}.
 
 %description -l pl
 To rozszerzenie dostarcza zestaw funkcji klienta ODBTP, Otwartego
-Protoko³u Transportu Baz Danych (Open Database Transport Portocol).
+Protoko³u Transportu Baz Danych (Open Database Transport Protocol).
 ODBTP pozwala na zdalny dostêp do ODBC zainstalowanego na komputerze z
-system Windows. Umo¿liwia to na dostep do baz danych takich jak MS SQL
+system Windows. Umo¿liwia to dostêp do baz danych takich jak MS SQL
 Server, MS Access czy Visual FoxPro z poziomu systemu Linux/Unix.
 
 To rozszerzenie ma w PECL status: %{_status}.
