@@ -1,0 +1,16 @@
+Do not require static version of odbtp library.
+
+diff -burN php-pecl-odbtp-1.1.2.orig/odbtp-1.1.2/config.m4 php-pecl-odbtp-1.1.2/odbtp-1.1.2/config.m4
+--- php-pecl-odbtp-1.1.2.orig/odbtp-1.1.2/config.m4	2004-10-05 16:57:44.123115448 +0200
++++ php-pecl-odbtp-1.1.2/odbtp-1.1.2/config.m4	2004-10-05 16:58:33.070674288 +0200
+@@ -39,8 +39,8 @@
+   PHP_ADD_INCLUDE($ODBTP_DIR/include)
+ 
+   # --with-odbtp -> chech for library
+-  if test ! -f "$ODBTP_DIR/lib/libodbtp.a"; then
+-    AC_MSG_ERROR([libodbtp.a not found])
++  if test ! -f "$ODBTP_DIR/lib64/libodbtp.so"; then
++    AC_MSG_ERROR([libodbtp.so not found])
+   fi
+ 
+   # --with-odbtp -> add library
