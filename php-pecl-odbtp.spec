@@ -7,21 +7,22 @@ Summary:	%{_modname} - ODBTP client functions
 Summary(pl):	%{_modname} - funkcjonalno¶æ klienta ODBTP
 Name:		php-pecl-%{_modname}
 Version:	1.1.2
-Release:	1
+Release:	1.2
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/%{_modname}-%{version}.tgz
 # Source0-md5:	28c3076fefccdca9e07548b8291d41b4
 Patch0:		%{name}-shared.patch
 Patch1:		%{name}-shared64.patch
+Patch2:		%{name}-confpath.patch
 URL:		http://pecl.php.net/package/odbtp/
 BuildRequires:	odbtp-devel
 BuildRequires:	php-devel >= 3:5.0.0
 BuildRequires:	rpmbuild(macros) >= 1.238
 %{?requires_php_extension}
 Requires:	%{_sysconfdir}/conf.d
-Obsoletes:	php-pear-%{_modname}
-Obsoletes:	php-%{_modname}
+Obsoletes:	php-pear-odbtp
+Obsoletes:	php-odbtp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -49,6 +50,7 @@ To rozszerzenie ma w PECL status: %{_status}.
 %else
 %patch0 -p1
 %endif
+%patch2 -p1
 
 %build
 cd %{_modname}-%{version}
