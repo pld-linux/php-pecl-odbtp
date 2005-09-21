@@ -20,8 +20,8 @@ BuildRequires:	php-devel >= 3:5.0.0
 BuildRequires:	rpmbuild(macros) >= 1.238
 %{?requires_php_extension}
 Requires:	%{_sysconfdir}/conf.d
-Obsoletes:	php-odbtp
 Obsoletes:	php-pear-%{_modname}
+Obsoletes:	php-%{_modname}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
