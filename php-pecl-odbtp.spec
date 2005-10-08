@@ -7,7 +7,7 @@ Summary:	%{_modname} - ODBTP client functions
 Summary(pl):	%{_modname} - funkcjonalno¶æ klienta ODBTP
 Name:		php-pecl-%{_modname}
 Version:	1.1.2
-Release:	1.3
+Release:	3
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/%{_modname}-%{version}.tgz
