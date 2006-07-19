@@ -1,8 +1,8 @@
 Do not require static version of odbtp library.
 
-diff -burN php-pecl-odbtp-1.1.2.orig/odbtp-1.1.2/config.m4 php-pecl-odbtp-1.1.2/odbtp-1.1.2/config.m4
---- php-pecl-odbtp-1.1.2.orig/odbtp-1.1.2/config.m4	2004-10-05 16:57:44.123115448 +0200
-+++ php-pecl-odbtp-1.1.2/odbtp-1.1.2/config.m4	2004-10-05 16:58:33.070674288 +0200
+diff -burN php-pecl-odbtp-1.1.4.orig/odbtp-1.1.4/config.m4 php-pecl-odbtp-1.1.4/odbtp-1.1.4/config.m4
+--- php-pecl-odbtp-1.1.4.orig/odbtp-1.1.4/config.m4	2004-10-05 16:57:44.123115448 +0200
++++ php-pecl-odbtp-1.1.4/odbtp-1.1.4/config.m4	2004-10-05 16:58:33.070674288 +0200
 @@ -39,8 +39,8 @@
    PHP_ADD_INCLUDE($ODBTP_DIR/include)
  
