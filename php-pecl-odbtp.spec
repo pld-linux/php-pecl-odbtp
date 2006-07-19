@@ -5,17 +5,17 @@
 Summary:	%{_modname} - ODBTP client functions
 Summary(pl):	%{_modname} - funkcjonalno¶æ klienta ODBTP
 Name:		php-pecl-%{_modname}
-Version:	1.1.2
-Release:	7
+Version:	1.1.4
+Release:	1
 License:	LGPL
 Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/%{_modname}-%{version}.tgz
-# Source0-md5:	28c3076fefccdca9e07548b8291d41b4
+# Source0-md5:	0ae71132e80c1bacb8ecc8d8221358f1
 Patch0:		%{name}-shared.patch
 Patch1:		%{name}-shared64.patch
 Patch2:		%{name}-confpath.patch
 URL:		http://pecl.php.net/package/odbtp/
-BuildRequires:	odbtp-devel
+BuildRequires:	odbtp-devel = %{version}
 BuildRequires:	php-devel >= 3:5.0.0
 BuildRequires:	rpmbuild(macros) >= 1.254
 %{?requires_php_extension}
