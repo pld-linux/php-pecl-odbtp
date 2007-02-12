@@ -1,7 +1,7 @@
 %define		_modname	odbtp
 %define		_status		stable
 Summary:	%{_modname} - ODBTP client functions
-Summary(pl):	%{_modname} - funkcjonalno¶æ klienta ODBTP
+Summary(pl.UTF-8):   %{_modname} - funkcjonalnoÅ›Ä‡ klienta ODBTP
 Name:		php-pecl-%{_modname}
 Version:	1.1.4
 Release:	3
@@ -33,11 +33,11 @@ Win32 databases like MS SQL Server, MS Access and Visual FoxPro.
 
 In PECL status of this extension is: %{_status}.
 
-%description -l pl
+%description -l pl.UTF-8
 To rozszerzenie dostarcza zestaw funkcji klienta ODBTP, Otwartego
-Protoko³u Transportu Baz Danych (Open Database Transport Protocol).
-ODBTP pozwala na zdalny dostêp do ODBC zainstalowanego na komputerze z
-systemem Windows. Umo¿liwia to dostêp do baz danych takich jak MS SQL
+ProtokoÅ‚u Transportu Baz Danych (Open Database Transport Protocol).
+ODBTP pozwala na zdalny dostÄ™p do ODBC zainstalowanego na komputerze z
+systemem Windows. UmoÅ¼liwia to dostÄ™p do baz danych takich jak MS SQL
 Server, MS Access czy Visual FoxPro z poziomu systemu Linux/Unix.
 
 To rozszerzenie ma w PECL status: %{_status}.
