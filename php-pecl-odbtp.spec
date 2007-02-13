@@ -1,7 +1,7 @@
 %define		_modname	odbtp
 %define		_status		stable
 Summary:	%{_modname} - ODBTP client functions
-Summary(pl.UTF-8):   %{_modname} - funkcjonalność klienta ODBTP
+Summary(pl.UTF-8):	%{_modname} - funkcjonalność klienta ODBTP
 Name:		php-pecl-%{_modname}
 Version:	1.1.4
 Release:	3
