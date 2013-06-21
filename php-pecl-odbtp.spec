@@ -1,21 +1,22 @@
-%define		_modname	odbtp
-%define		_status		stable
-Summary:	%{_modname} - ODBTP client functions
-Summary(pl.UTF-8):	%{_modname} - funkcjonalność klienta ODBTP
-Name:		php-pecl-%{_modname}
+%define		php_name	php%{?php_suffix}
+%define		modname	odbtp
+%define		status		stable
+Summary:	%{modname} - ODBTP client functions
+Summary(pl.UTF-8):	%{modname} - funkcjonalność klienta ODBTP
+Name:		%{php_name}-pecl-%{modname}
 Version:	1.1.4
 Release:	4
 License:	LGPL
 Group:		Development/Languages/PHP
-Source0:	http://pecl.php.net/get/%{_modname}-%{version}.tgz
+Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 # Source0-md5:	0ae71132e80c1bacb8ecc8d8221358f1
-Patch0:		%{name}-shared.patch
-Patch1:		%{name}-shared64.patch
-Patch2:		%{name}-confpath.patch
+Patch0:		php-pecl-%{modname}-shared.patch
+Patch1:		php-pecl-%{modname}-shared64.patch
+Patch2:		php-pecl-%{modname}-confpath.patch
 URL:		http://pecl.php.net/package/odbtp/
 BuildRequires:	odbtp-devel = %{version}
-BuildRequires:	php-devel >= 3:5.0.0
-BuildRequires:	rpmbuild(macros) >= 1.344
+BuildRequires:	%{php_name}-devel >= 3:5.0.0
+BuildRequires:	rpmbuild(macros) >= 1.650
 %{?requires_php_extension}
 Requires:	php-common >= 4:5.0.4
 Provides:	php(odbtp)
@@ -31,7 +32,7 @@ the ODBC facilities installed on a Win32 host to connect to a
 database. Linux and UNIX clients can use this extension to access
 Win32 databases like MS SQL Server, MS Access and Visual FoxPro.
 
-In PECL status of this extension is: %{_status}.
+In PECL status of this extension is: %{status}.
 
 %description -l pl.UTF-8
 To rozszerzenie dostarcza zestaw funkcji klienta ODBTP, Otwartego
@@ -40,10 +41,11 @@ ODBTP pozwala na zdalny dostęp do ODBC zainstalowanego na komputerze z
 systemem Windows. Umożliwia to dostęp do baz danych takich jak MS SQL
 Server, MS Access czy Visual FoxPro z poziomu systemu Linux/Unix.
 
-To rozszerzenie ma w PECL status: %{_status}.
+To rozszerzenie ma w PECL status: %{status}.
 
 %prep
-%setup -q -c
+%setup -qc
+mv %{modname}-%{version}/* .
 %if "%{_lib}" == "lib64"
 %patch1 -p1
 %else
@@ -52,7 +54,6 @@ To rozszerzenie ma w PECL status: %{_status}.
 %patch2 -p1
 
 %build
-cd %{_modname}-%{version}
 phpize
 %configure
 %{__make}
@@ -60,11 +61,10 @@ phpize
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{php_sysconfdir}/conf.d,%{php_extensiondir}}
-
-install %{_modname}-%{version}/modules/%{_modname}.so $RPM_BUILD_ROOT%{php_extensiondir}
-cat <<'EOF' > $RPM_BUILD_ROOT%{php_sysconfdir}/conf.d/%{_modname}.ini
-; Enable %{_modname} extension module
-extension=%{_modname}.so
+install -p modules/%{modname}.so $RPM_BUILD_ROOT%{php_extensiondir}
+cat <<'EOF' > $RPM_BUILD_ROOT%{php_sysconfdir}/conf.d/%{modname}.ini
+; Enable %{modname} extension module
+extension=%{modname}.so
 EOF
 
 %clean
@@ -80,6 +80,6 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc %{_modname}-%{version}/{CREDITS,EXPERIMENTAL}
-%config(noreplace) %verify(not md5 mtime size) %{php_sysconfdir}/conf.d/%{_modname}.ini
-%attr(755,root,root) %{php_extensiondir}/%{_modname}.so
+%doc CREDITS EXPERIMENTAL
+%config(noreplace) %verify(not md5 mtime size) %{php_sysconfdir}/conf.d/%{modname}.ini
+%attr(755,root,root) %{php_extensiondir}/%{modname}.so
