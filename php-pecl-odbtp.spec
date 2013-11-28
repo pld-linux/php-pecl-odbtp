@@ -1,6 +1,5 @@
 %define		php_name	php%{?php_suffix}
-%define		modname	odbtp
-%define		status		stable
+%define		modname		odbtp
 Summary:	%{modname} - ODBTP client functions
 Summary(pl.UTF-8):	%{modname} - funkcjonalność klienta ODBTP
 Name:		%{php_name}-pecl-%{modname}
@@ -14,11 +13,11 @@ Patch0:		php-pecl-%{modname}-shared.patch
 Patch1:		php-pecl-%{modname}-shared64.patch
 Patch2:		php-pecl-%{modname}-confpath.patch
 URL:		http://pecl.php.net/package/odbtp/
-BuildRequires:	odbtp-devel = %{version}
 BuildRequires:	%{php_name}-devel >= 3:5.0.0
+BuildRequires:	odbtp-devel = %{version}
 BuildRequires:	rpmbuild(macros) >= 1.650
 %{?requires_php_extension}
-Requires:	php-common >= 4:5.0.4
+Requires:	php(core) >= 5.0.4
 Provides:	php(odbtp)
 Obsoletes:	php-odbtp
 Obsoletes:	php-pear-odbtp
@@ -32,8 +31,6 @@ the ODBC facilities installed on a Win32 host to connect to a
 database. Linux and UNIX clients can use this extension to access
 Win32 databases like MS SQL Server, MS Access and Visual FoxPro.
 
-In PECL status of this extension is: %{status}.
-
 %description -l pl.UTF-8
 To rozszerzenie dostarcza zestaw funkcji klienta ODBTP, Otwartego
 Protokołu Transportu Baz Danych (Open Database Transport Protocol).
@@ -41,17 +38,15 @@ ODBTP pozwala na zdalny dostęp do ODBC zainstalowanego na komputerze z
 systemem Windows. Umożliwia to dostęp do baz danych takich jak MS SQL
 Server, MS Access czy Visual FoxPro z poziomu systemu Linux/Unix.
 
-To rozszerzenie ma w PECL status: %{status}.
-
 %prep
 %setup -qc
 mv %{modname}-%{version}/* .
 %if "%{_lib}" == "lib64"
-%patch1 -p1
+%patch1 -p2
 %else
-%patch0 -p1
+%patch0 -p2
 %endif
-%patch2 -p1
+%patch2 -p2
 
 %build
 phpize
